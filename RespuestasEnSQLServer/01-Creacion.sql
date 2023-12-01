@@ -21,7 +21,7 @@ CREATE TABLE libros(
 	editorial VARCHAR(75),
 	anioPublicacion VARCHAR(4),
 	ejemplaresDisponibles INT,
-	estado BIT,
+	estado BIT, -- Bit sirve como valor booleano, 0=No disponible y 1=Disponible
 	FOREIGN KEY (idGenero) REFERENCES generos(idGenero),
 	FOREIGN KEY (idAutor) REFERENCES autores(idAutor)
 );
@@ -41,7 +41,7 @@ CREATE TABLE librosPrestados(
 	isbn VARCHAR(150),
 	fechaPrestamo DATE,
 	fechaDeDevolucion DATE,
-	estado BIT,
+	estado BIT, -- Bit sirve como valor booleano, 0=No devuelto y 1=Devuelto
 	FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario),
 	FOREIGN KEY (isbn) REFERENCES libros(isbn)
 );
